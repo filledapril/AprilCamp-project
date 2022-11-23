@@ -1,0 +1,70 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row mb-3">
+        <h1 class="text-center">New Campground</h1>
+        <div class="col-6 offset-md-3">
+          
+                <form action="/campgrounds" method="POST" class='validate-form' novalidate enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label class='form-label' for="title">Camp Name</label>
+                        <input class='form-control' type="text" id="title" name="campground[title]" required>
+                        <div class="invalid-feedback">
+                            Please provide a name.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class='form-label' for="location">Location</label>
+                        <input class='form-control' type="text" id="location" name="campground[location]" required>
+                        <div class="invalid-feedback">
+                            Please provide a location.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class='form-label' for="price">Campground Price</label>
+                        <div class="input-group">
+                            <span class="input-group-text" id="price-label">€</span>
+                            <input 
+                            type="text" 
+                            class="form-control" 
+                            id="price" 
+                            placeholder="0.00" 
+                            aria-label="price" 
+                            aria-describedby="price-label" 
+                            name="campground[price]" required>
+                            <div class="invalid-feedback">
+                                Please provide a price.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Upload Image(s)</label>
+                        <input class="form-control" type="file" id="iamge" name="image" multiple required>
+                        <div class="invalid-feedback">
+                            Upload at least one image.
+                        </div>
+                    </div>
+                    <!-- <div class="mb-3">
+                        <label class='form-label' for="image">Image Url</label>
+                        <input class='form-control' type="text" id="image" name="campground[image]" required>
+                        <div class="invalid-feedback">
+                            Please provide a image url.
+                        </div>
+                    </div> -->
+                    <div class="mb-3">
+                        <label class='form-label' for="description">Description</label>
+                        <textarea class='form-control' type="text" id="description" name="campground[description]" required></textarea>
+                        <div class="invalid-feedback">
+                            Please provide a description.
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                    <button class="btn btn-success my-3">Add New Campground</button>
+                    </div>
+                </form>
+                <div class="d-grid gap-2">
+                    <a class='btn btn-secondary' href="/campgrounds">Back to all campgrounds</a>
+                </div>
+           
+        </div>
+    </div>
+
+    
